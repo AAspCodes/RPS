@@ -28,12 +28,14 @@ public class Game {
 		String p2_move;
 		if (this.gamestyle) {
 			//p2_move = get_random_move();
+			p2_move = "paper";
 		} else {
 			System.out.print("Player 2");
 			p2_move = this.uin.rock_paper_scissors();
 		}
 		
-		
+		int winner = this.find_winner(p1_move, p2_move);
+		System.out.print(winner);
 		// compare
 		// Announce winner
 		// add points
@@ -42,39 +44,45 @@ public class Game {
 		
 	}
 	
-	private int find_winner(int p1_move, int p2_move) {
+	private int find_winner(String p1_move, String p2_move) {
+		// return 0 if draw, 1 if player 1 wins, 2 if player 2 wins
 		
-		
-		if (p1_move == p2_move) {
+		if (p1_move.equals(p2_move)) {
 			//draw
 			return 0;
 		} else {
 			
+			String rock = "rock";
+			String paper = "paper";
+			String scissors = "scissors";
+			
 			switch (p1_move) {
-			case 0:
-				//p1 has rock
-				if (p2_move == 1) {
-					// p2 has
+			
+			case "rock":
+				if (p2_move.equals(paper)) {
 					return 2;
 				} else {
 					return 1;
 				}
-			case 1:
-				//p1 has paper
-			case 2:
-				//p1 has scissors
+				
+			case "paper":
+				if (p2_move.equals(scissors)) {
+					return 2;
+				} else {
+					return 1;
+				}
+				
+			case "scissors":
+				if (p2_move.equals(rock)) {
+					return 2;
+				} else {
+					return 1;
+				}
 				
 			default:
 				assert (1 == 2);
+				return 0;
 			}
-			
-			
-			
-			
-			
-			
-			
-			
 		}
 	}
 	

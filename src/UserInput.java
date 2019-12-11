@@ -24,7 +24,7 @@ public class UserInput {
 	}
 
 	public String rock_paper_scissors() {
-		String answer = this.string_choice(new String[] { "Rock, Paper or Scissors? r/p/s", "r", "p", "s" });
+		String answer = this.string_choice(new String[] { " Rock, Paper or Scissors? r/p/s", "r", "p", "s" });
 		// TODO convert if tree to switch case
 		if (answer.equals(new String("r"))) {
 			return "rock";
