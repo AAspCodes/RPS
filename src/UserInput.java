@@ -23,17 +23,17 @@ public class UserInput {
 		}
 	}
 
-	public int rock_paper_scissors() {
+	public String rock_paper_scissors() {
 		String answer = this.string_choice(new String[] { "Rock, Paper or Scissors? r/p/s", "r", "p", "s" });
 		// TODO convert if tree to switch case
 		if (answer.equals(new String("r"))) {
-			return 0;
+			return "rock";
 
 		} else if (answer.equals(new String("p"))) {
-			return 1;
+			return "paper";
 
 		} else {
-			return 2;
+			return "scissors";
 		}
 	}
 
