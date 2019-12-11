@@ -1,6 +1,13 @@
 # Compiled class file
 *.class
 
+
+#eclipse specific
+.project
+.settings
+.classpath
+bin
+
 # Log file
 *.log
 
