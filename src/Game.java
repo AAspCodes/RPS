@@ -39,4 +39,48 @@ public class Game {
 		// add points
 		// repeat
 
+		
+	}
+	
+	private int find_winner(int p1_move, int p2_move) {
+		
+		
+		if (p1_move == p2_move) {
+			//draw
+			return 0;
+		} else {
+			
+			switch (p1_move) {
+			case 0:
+				//p1 has rock
+				if (p2_move == 1) {
+					// p2 has
+					return 2;
+				} else {
+					return 1;
+				}
+			case 1:
+				//p1 has paper
+			case 2:
+				//p1 has scissors
+				
+			default:
+				assert (1 == 2);
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+		}
+	}
+	
+
+
+	private void greetings() {
+		System.out.println("Welcome to Rock Paper Scissors by Anthony Asp!");
+	}
 }
