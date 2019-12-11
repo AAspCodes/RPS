@@ -7,6 +7,8 @@ public class Game {
 	
 	public Game() {
 		uin = new UserInput();
+		player_1_score = 0;
+		player_2_score = 0;
 	}
 	
 	public void begin() {
@@ -16,12 +18,9 @@ public class Game {
 		while (true) {
 			this.gameloop();
 		}
-		
 	}
 	
-	
 	private void gameloop() {
-		
 		System.out.print("Player 1");
 		String p1_move = this.uin.rock_paper_scissors();
 		
@@ -34,14 +33,41 @@ public class Game {
 			p2_move = this.uin.rock_paper_scissors();
 		}
 		
-		int winner = this.find_winner(p1_move, p2_move);
-		System.out.print(winner);
-		// compare
-		// Announce winner
-		// add points
-		// repeat
-
+		// explain moves
+		this.explain_moves(p1_move, p2_move);
 		
+		// compare
+		int winner = this.find_winner(p1_move, p2_move);
+		this.handle_outcome(winner);
+		// TODO explain points
+		// TODO ask if player wants to play again
+		
+		
+	}
+	
+	private void handle_outcome(int winner) {
+		switch (winner) {
+		case 0:
+			//draw
+			System.out.println("It's a Draw!");
+		case 1:
+			//p1 win
+			System.out.println("Player 1 Wins!");
+			this.player_1_score += 1;
+		case 2:
+			//p2 win
+			System.out.println("Player 2 Wins!");
+			this.player_2_score += 1;
+		}
+	}
+	
+	private void explain_moves(String p1_move, String p2_move) {
+		System.out.println("Player 1 played " + p1_move);
+		if (this.gamestyle) {
+			System.out.println("The Computer played " + p2_move);
+		} else {
+			System.out.println("Player 2 played " + p2_move);
+		}
 	}
 	
 	private int find_winner(String p1_move, String p2_move) {
@@ -86,8 +112,6 @@ public class Game {
 		}
 	}
 	
-
-
 	private void greetings() {
 		System.out.println("Welcome to Rock Paper Scissors by Anthony Asp!");
 	}
