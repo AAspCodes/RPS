@@ -113,6 +113,6 @@ public class Game {
 	}
 	
 	private void greetings() {
-		System.out.println("Welcome to Rock Paper Scissors by Anthony Asp!");
+		System.out.println("Welcome to Rock Paper Scissors by Anthony Asp! Completed December 12th 2019");
 	}
 }
