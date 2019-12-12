@@ -38,17 +38,10 @@ public class Game {
 			System.out.print("Player 2");
 			p2_move = this.uin.rock_paper_scissors();
 		}
-		
-		// explain moves
+
 		this.explain_moves(p1_move, p2_move);
-		
-		// compare
 		int winner = this.find_winner(p1_move, p2_move);
 		this.handle_outcome(winner);
-		// TODO explain points
-		// TODO ask if player wants to play again
-		
-		
 	}
 	
 	private void handle_outcome(int winner) {
