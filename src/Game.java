@@ -10,7 +10,7 @@ public class Game {
 		player_1_score = 0;
 		player_2_score = 0;
 	}
-	
+
 	public void begin() {
 		this.greetings();
 		gamestyle = uin.computer_or_player();
@@ -19,12 +19,12 @@ public class Game {
 			this.gameloop();
 		}
 	}
-	
+
 	private void gameloop() {
 		System.out.print("Player 1");
 		String p1_move = this.uin.rock_paper_scissors();
-		
 		String p2_move;
+
 		if (this.gamestyle) {
 			//p2_move = get_random_move();
 			p2_move = "paper";
@@ -48,19 +48,19 @@ public class Game {
 	private void handle_outcome(int winner) {
 		switch (winner) {
 		case 0:
-			//draw
+			// draw
 			System.out.println("It's a Draw!");
 		case 1:
-			//p1 win
+			// p1 win
 			System.out.println("Player 1 Wins!");
 			this.player_1_score += 1;
 		case 2:
-			//p2 win
+			// p2 win
 			System.out.println("Player 2 Wins!");
 			this.player_2_score += 1;
 		}
 	}
-	
+
 	private void explain_moves(String p1_move, String p2_move) {
 		System.out.println("Player 1 played " + p1_move);
 		if (this.gamestyle) {
