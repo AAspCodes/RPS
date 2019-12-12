@@ -69,49 +69,49 @@ public class Game {
 			System.out.println("Player 2 played " + p2_move);
 		}
 	}
-	
+
 	private int find_winner(String p1_move, String p2_move) {
 		// return 0 if draw, 1 if player 1 wins, 2 if player 2 wins
-		
+
 		if (p1_move.equals(p2_move)) {
-			//draw
+			// draw
 			return 0;
 		} else {
-			
+
 			String rock = "rock";
 			String paper = "paper";
 			String scissors = "scissors";
-			
+
 			switch (p1_move) {
-			
+
 			case "rock":
 				if (p2_move.equals(paper)) {
 					return 2;
 				} else {
 					return 1;
 				}
-				
+
 			case "paper":
 				if (p2_move.equals(scissors)) {
 					return 2;
 				} else {
 					return 1;
 				}
-				
+
 			case "scissors":
 				if (p2_move.equals(rock)) {
 					return 2;
 				} else {
 					return 1;
 				}
-				
+
 			default:
 				assert (1 == 2);
 				return 0;
 			}
 		}
 	}
-	
+
 	private void greetings() {
 		System.out.println("Welcome to Rock Paper Scissors by Anthony Asp! Completed December 12th 2019");
 	}
