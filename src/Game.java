@@ -21,6 +21,9 @@ public class Game {
 
 		while (true) {
 			this.gameloop();
+			if (!(uin.playAgain())) {
+				break;
+			}
 		}
 	}
 
