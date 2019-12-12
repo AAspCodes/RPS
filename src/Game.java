@@ -60,14 +60,17 @@ public class Game {
 		case 0:
 			// draw
 			System.out.println("It's a Draw!");
+			break;
 		case 1:
 			// p1 win
 			System.out.println("Player 1 Wins!");
 			this.player_1_score += 1;
+			break;
 		case 2:
 			// p2 win
 			System.out.println("Player 2 Wins!");
 			this.player_2_score += 1;
+			break;
 		}
 	}
 
