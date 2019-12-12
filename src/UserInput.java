@@ -57,4 +57,13 @@ public class UserInput {
 		}
 		return answer;
 	}
+
+	public Boolean playAgain() {
+		String answer = this.string_choice(new String[] { "Do you want to play again? y/n", "y", "n" });
+		if (answer.equals(new String("n"))) {
+			return false;
+		} else {
+			return true;
+		}
+	}
 }
