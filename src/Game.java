@@ -4,7 +4,8 @@ public class Game {
 	boolean gamestyle;
 	int player_1_score;
 	int player_2_score;
-	
+	ComputerPlayer comp;
+
 	public Game() {
 		uin = new UserInput();
 		player_1_score = 0;
@@ -14,7 +15,10 @@ public class Game {
 	public void begin() {
 		this.greetings();
 		gamestyle = uin.computer_or_player();
-		
+		if (this.gamestyle) {
+			comp = new ComputerPlayer();
+		}
+
 		while (true) {
 			this.gameloop();
 		}
@@ -26,8 +30,7 @@ public class Game {
 		String p2_move;
 
 		if (this.gamestyle) {
-			//p2_move = get_random_move();
-			p2_move = "paper";
+			p2_move = this.comp.getRandomMove();
 		} else {
 			System.out.print("Player 2");
 			p2_move = this.uin.rock_paper_scissors();
