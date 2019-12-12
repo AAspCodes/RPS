@@ -42,8 +42,19 @@ public class Game {
 		this.explain_moves(p1_move, p2_move);
 		int winner = this.find_winner(p1_move, p2_move);
 		this.handle_outcome(winner);
+		this.tell_points();
 	}
-	
+
+	private void tell_points() {
+		System.out.println("Player 1 has " + this.player_1_score + " Points!");
+		if (this.gamestyle) {
+			System.out.print("The Computer has ");
+		} else {
+			System.out.print("Player 2 has ");
+		}
+		System.out.println(this.player_2_score + " Points!");
+	}
+
 	private void handle_outcome(int winner) {
 		switch (winner) {
 		case 0:
